@@ -1,0 +1,22 @@
+name: SauceLabs Execution
+
+on:
+  workflow_dispatch:
+  push: 
+    branches: main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Build and Test
+        run: mvn clean test -DLTusername=${{ secrets.SL_USER_NAME }} -DLTestaccessKey=${{ secrets.SL_ACCESS_KEY}} && true
+
+      - name: Reports Upload
+        uses: actions/upload-artifact@v4
+        with: 
+          name: reports.zip
+          path: /target/surefire-reports/
