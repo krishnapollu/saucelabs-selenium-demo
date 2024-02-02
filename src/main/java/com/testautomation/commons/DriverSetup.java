@@ -30,8 +30,8 @@ public class DriverSetup {
             TestParameters.sl_accessKey = sl_accessKey;
         }
 
-        System.out.println(TestParameters.sl_username);
-        System.out.println(TestParameters.sl_accessKey);
+        System.out.println("Creds (username): "+TestParameters.sl_username);
+        System.out.println("Creds (key): "+TestParameters.sl_accessKey);
 
         ChromeOptions browserOptions = new ChromeOptions();
         browserOptions.setPlatformName("Windows 11");
@@ -46,6 +46,7 @@ public class DriverSetup {
         try{
             URL url = new URL("https://ondemand.us-west-1.saucelabs.com:443/wd/hub");
             driver = new RemoteWebDriver(url, browserOptions);
+            driver.get(app_url);
         }catch(Exception e){
             e.printStackTrace();
         }

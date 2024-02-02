@@ -5,8 +5,8 @@
 	<parameter name="appURL" value="https://www.saucedemo.com/v1/index.html" />
     
     <!--Provide the credentials if running this xml from an IDE as TestNG suite-->
-    <parameter name="SLusername" value="oauth-krishnapollu-ae54a" />
-	<parameter name="SLaccessKey" value="af0501a4-d3aa-489e-8a1e-a38602f33043" />
+    <parameter name="SLusername" value="" />
+	<parameter name="SLaccessKey" value="" />
 
 	<test name="SauceLabsTest">
 		<classes>
